@@ -32,6 +32,8 @@ public class RobotContainer {
 
   private final DriveToLine driveToLine;
   private final DriveTrain dt;
+  private final MagicDrive magicDrive;
+
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -42,6 +44,8 @@ public class RobotContainer {
     dt = new DriveTrain();
     driveToLine = new DriveToLine(dt, 0.2);
 
+    magicDrive = new MagicDrive(dt);
+
 
     // Configure the button bindings
     configureButtonBindings();
@@ -50,6 +54,12 @@ public class RobotContainer {
   public static Joystick getJoy2() {
     return joystick2;
   }
+
+  public Command getAutonomousCommand() {
+    // An ExampleCommand will run in autonomous
+    return magicDrive;
+  }
+
  
 
   public static Joystick getJoy1() {
