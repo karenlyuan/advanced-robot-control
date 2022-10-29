@@ -102,10 +102,11 @@ SmartDashboard.putNumber("Left Flywheel RPM", getLeftRPM());
 SmartDashboard.putNumber("Left Flywheel Power", getLeftFlywheelPower());
 SmartDashboard.putNumber("Right Flywheel RPM", getRightRPM());
 SmartDashboard.putNumber("Right Flywheel Power", getRightFlywheelPower());
-if (RobotContainer.getJoy1().getRawButton(2) && overrideTimer.get() >= overrideTime) {
+  if (RobotContainer.getJoy1().getRawButton(2) && overrideTimer.get() >= overrideTime) {
   override = !override;
   overrideTimer.reset();
   }
+  /*
   if (override) { // Auto code
     if (RobotContainer.getJoy1().getRawButton(1)) {
     setFlywheelConstantVelocity(1000.0); // Sets it to 1000 RPM
@@ -114,14 +115,10 @@ if (RobotContainer.getJoy1().getRawButton(2) && overrideTimer.get() >= overrideT
     setFlywheelPower(0.0);
     }
     } else if (!override) { // Default manual override
-    setFlywheelPower(-1.0*RobotContainer.getJoy1().getY());
+    //setFlywheelPower(-1.0*RobotContainer.getJoy1().getY());
     }
     
   
-  }
-
-  
-        
-
-      
-}
+  }*/
+    
+}}

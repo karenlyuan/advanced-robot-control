@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotContainer;
 import frc.robot.Constants;
 import frc.robot.Robot;
-import com.kauailabs.navx.frc.AHRS;
+//import com.kauailabs.navx.frc.AHRS;
 
 
 public class DriveTrain extends SubsystemBase {
@@ -29,7 +29,7 @@ public class DriveTrain extends SubsystemBase {
   private final VictorSPX _leftDriveVictor;
   private final VictorSPX _rightDriveVictor;
 
-  private AHRS navx = new AHRS(SPI.Port.kMXP);
+ //private AHRS navx = new AHRS(SPI.Port.kMXP);
 
   private double DriveToLineDirection = 1.0;
   private double DriveToLineOffset = 0.0;
@@ -37,7 +37,7 @@ public class DriveTrain extends SubsystemBase {
   private ShuffleboardTab DTLTab = Shuffleboard.getTab("Drive To Line");
   private NetworkTableEntry SwitchDirection = DTLTab.add("Direction", 1).getEntry();
   private NetworkTableEntry DTLDisplacement = DTLTab.add("Displacement", 0.0).getEntry();
-  private NetworkTableEntry DTLOffset = DTLTab.add("Displacement", 0.0).getEntry();
+  private NetworkTableEntry DTLOffset = DTLTab.add("Offset", 0.0).getEntry();
   private NetworkTableEntry LeftVelocity = DTLTab.add("Left Native Velocity", 0.0).getEntry();
   private NetworkTableEntry RightVelocity = DTLTab.add("Right Native Velocity", 0.0).getEntry();
 
@@ -61,19 +61,19 @@ public class DriveTrain extends SubsystemBase {
     leftDriveTalon.configFactoryDefault(); leftDriveTalon.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
     rightDriveTalon.configFactoryDefault();    rightDriveTalon.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
 
-    leftDriveTalon.config_kP(0, 3.0, 10);
+    leftDriveTalon.config_kP(0, 5.0, 10);
     leftDriveTalon.config_kI(0, 0.0, 10);
     leftDriveTalon.config_kD(0, 0.0, 10);
  
     leftDriveTalon.configMotionAcceleration(220.0, 10);
-    leftDriveTalon.configMotionCruiseVelocity(400.0, 10);
+    leftDriveTalon.configMotionCruiseVelocity(510.0, 10);
  
-    rightDriveTalon.config_kP(0, 3.0, 10);
+    rightDriveTalon.config_kP(0, 5.0, 10);
     rightDriveTalon.config_kI(0, 0.0, 10);
     rightDriveTalon.config_kD(0, 0.0, 10);
  
     rightDriveTalon.configMotionAcceleration(200, 10);
-    rightDriveTalon.configMotionCruiseVelocity(400.0, 10);
+    rightDriveTalon.configMotionCruiseVelocity(300.0, 10);
     rightDriveTalon.setSensorPhase(true);
     rightDriveTalon.setSensorPhase(true);   
  

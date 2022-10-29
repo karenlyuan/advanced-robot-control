@@ -2,12 +2,13 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+package frc.robot.commands;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
 
 /** An example command that uses an example subsystem. */
-public class MagicDrive  extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+public class MagicDrive extends CommandBase  {
 
   private double displacement = 1.0;
   private final DriveTrain dt;
@@ -20,9 +21,7 @@ public class MagicDrive  extends CommandBase {
    */
   public MagicDrive(DriveTrain dt) {
     // Use addRequirements() here to declare subsystem dependencies.
-    public MagicDrive(DriveTrain dt) {
       this.dt = dt;
-    }   
   }
 
 
@@ -38,9 +37,6 @@ public class MagicDrive  extends CommandBase {
   public void execute() {
     dt.magicDrive(displacement);
   }
- 
-  
-  
 
   // Called once the command ends or is interrupted.
   @Override
@@ -52,5 +48,4 @@ public class MagicDrive  extends CommandBase {
     return Math.abs(dt.getDisplacement()) >= Math.abs(displacement);
   }
  
-  
 }
